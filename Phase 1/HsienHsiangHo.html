@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href="my.css" rel="stylesheet"> <!--things will look differently now -->
+  <style>
+    div.dropbtn {
+        background-color: #4CAF50;
+        color: white;
+        padding: 16px;
+        font-size: 16px;
+        border: 16px;
+        cursor: pointer;
+    }
+
+    div.dropdown {
+        position: relative;
+        display: inline-block;
+    }
+
+    div.dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+    }
+
+    div.dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+    }
+
+    div.dropdown-content a:hover {background-color: #f1f1f1}
+
+    div.dropdown:hover .dropdown-content {
+        display: block;
+    }
+
+    div.dropdown:hover .dropbtn {
+        background-color: #3e8e41;
+    }
+  </style>
+</head>
+<body>
+<h1>Hsien Hsiang Ho</h1>
+
+<div class="dropdown">
+  <button class="dropbtn">Team Members</button>
+  <div class="dropdown-content">
+    <a href=" l">Member #1</a>
+    <a href="HsienHsiangHo.html">HsienHsiangHo</a>
+  </div>
+</div>
+
+<div>
+<p>Welcome to CIS 3110</p>
+<p>Type a name and number into the input, below, then click the first button, observing the console. </p>
+  Give us a name: <input type="text" id="name" name="give us a name."/><br>
+  Give us a number: <input type="number" id="number" name="give us a number."/><br>
+  <button id="thisGuy">click me to move the input's data into the console</button> <!--check out script for details -->
+  <button id="closer" onclick="navigate()">click this move to the next page, if you're done </button>
+</div>
+<div>
+
+      <p id="littleLesson">
+      <p id="output">
+      <p id="output1">
+</div>
+
+<div id="warning"/>
+    <script>
+        document.getElementById('thisGuy').onclick = function()
+        {
+          var l = document.getElementById("name").value;
+          console.log("value of text input is now " + l);
+          document.getElementById('littleLesson').innerHTML = "now check out how js can generate content, using the DOM";
+          document.getElementById('output').innerHTML = "Name: <strong> " + l + "</strong>";
+          var l = document.getElementById("number").value;
+          console.log("value of text input is now " + l);
+          document.getElementById('output1').innerHTML = "Number: <strong> " + l + "</strong>";
+        };
+
+        function navigate() //move the user onward to first.html
+        {
+          var y = document.getElementById('number').value;
+          console.log("y  == " + y);
+          if(y > 1 && y < 100)
+          {
+            window.location.href = "HsienHsiangHo.html"; //move to homepage
+          }else
+          {
+              document.getElementById('warning').innerHTML = "didn't meet the restrictions: y should be gt 1 and lt 100";
+              alert("didn't meet the restrictions: y should be gt 1 and lt 100");
+          }
+        };
+    </script>
+</body></html>

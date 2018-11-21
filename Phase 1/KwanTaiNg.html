@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+
+<html><head>
+  <link href="my.css" rel="stylesheet">
+</head>
+
+<body>
+  <h1 style="text-indent:60px"> Kwan Tai (Quentin) Ng </h1>
+  <p style="text-indent:165px">CIS 3110 Group </p>
+  <div>
+    <p> Please select a member's name to go to their page.</p>
+    <div class="dropdown" style="margin-left:55px">
+      <button class="dropbtn">Member Selection</button>
+      <li class="dropdown-content">
+        <a href="KwanTaiNg.html">Kwan Tai Ng</a>
+        <a href="HsienHsiangHo.html">Hsien Hsiang Ho</a>
+      </li>
+    </div>
+    <p></p>
+  <p>Enter some number here:  <input type="number" id="x"> </p>
+  <p style="text-indent:25px">Enter some text here:
+    <input type="text" id="y">
+  </p>
+    <button id="transfertoConsole"> Click this button to transfer to console</button>
+  </div>
+
+    <div>
+      <font color="hotpink">
+      <p id="initial">Your inputs will be shown after you submit.</p><p>
+      </p><p id="intro">
+      </p><p id="numberout">
+      </p><p id="textout">
+      </p><p id="createlink"><a href="homepage.html">Follow this link to go back to homepage </a></p></font><p><font color="hotpink">
+      </font>
+    </p></div>
+
+      <script>
+      document.getElementById('transfertoConsole').onclick = function(){
+        var l =document.getElementById("x").value;
+        console.log("number input is "+l);
+        var m = document.getElementById("y").value;
+        console.log("text input is "+m);
+
+
+        document.getElementById('intro').innerHTML = "Your input was as follows: ";
+        document.getElementById('numberout').innerHTML = "Number: " + l;
+        document.getElementById('textout').innerHTML = "Text: " +m;
+      }
+      </script>
+
+
+</body></html>

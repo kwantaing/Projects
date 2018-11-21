@@ -1,0 +1,23 @@
+.pctImg{
+width: 65%;
+height: auto;
+}
+.imgDiv{
+  position: relative;
+  background-color:#eca8d7;
+  width:30%
+  height:300px;
+  padding:5px;
+}
+.star{
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  top: 0;
+  left: 0;
+}
+.capDiv{
+  background-color:#bb7ebb;
+  padding: 0px;
+  margin:0px;
+}

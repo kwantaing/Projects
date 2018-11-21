@@ -1,0 +1,10 @@
+.pctImg{
+width: 85%;
+height: auto;
+}
+.imgDiv{
+  background-color:#e2e2c7;
+  width:30%
+  height:300px;
+  padding:5px;
+}

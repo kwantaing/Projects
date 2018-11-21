@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href=home.css rel="stylesheet">
+  <script type="text/javascript" src="declaration1.js"></script>
+</head>
+<body>
+  <script>
+  console.log(images);
+  var url;
+  for(var i=0; i < images.length; i++){
+    console.log("image in iteration is " +images[i]);
+    url = "https://s3.us-east-2.amazonaws.com/phase2final1/"+ images[i];
+    urlofDetailPage = "detailPageA.html?" + "img=" + url;
+    var imgDiv = document.createElement("div");
+    imgDiv.setAttribute("class","imgDiv");   // div class named imgdiv
+    var imgInDiv = document.createElement("img"); // img here
+   imgInDiv.setAttribute("class", "pctImg");
+   imgInDiv.setAttribute("src", url);
+   var link = document.createElement("a");
+   link.setAttribute("href", urlofDetailPage);
+   link.appendChild(imgInDiv);
+   imgDiv.appendChild(link);
+   imgDiv.innerHTML += "<br/>"+"<strong>"+ captions[i]+ "</strong>";
+   descriptions[i];
+  document.body.appendChild(imgDiv);
+  }
+  </script>
+</body>

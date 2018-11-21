@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title> Home Page CSS3 Grid </title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <script src ="https://code.jquery.com/jquery-3.3.1.js"></script>
+  <script type="text/javascript" src="declaration.js"></script>
+  <title> DIY responsive grid</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="nonBootStrap.css">
+  <h1><span class = "badge badge-primary">Welcome!</span>Welcome To Our Group Home Page<span class = "badge badge-primary">Welcome!</span></h1>
+  <h2>
+    <div class="dropdown show">
+      <button class="btn btn-sucess dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Individual Member Pages</button>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" href="https://s3.us-east-2.amazonaws.com/phase4draft1/start2.html">Kwan Tai Ng</a>
+        <a class="dropdown-item" href="https://s3-us-west-1.amazonaws.com/cis3110/Phase3/phase2-start-v4.html">Hsien Hsiang Ho</a>
+      </div>
+    </div>
+  </h2>
+
+
+</head>
+
+<body>
+  <div id="CheckCookieModal" class="modal fade" role="dialog">
+    <div class = "modal-dialog" >
+      <div class="modal-content" style = "background-color: white">
+        <button type = "button" style = "margin-left:0" class ="close" data-dismiss="modal">&times;</button>
+        <h4 class ="modal-title">Current Cookie </h4>
+      </div>
+      <div class = "modal-body" style = "background-color: white">
+        <p id ="CheckCookieContent">
+        </div>
+      </div>
+    </div>
+<script>
+console.table({images,captions,descriptions});
+
+var containMe = document.createElement("div");
+containMe.setAttribute("class", "containMe");
+document.body.appendChild(containMe);
+for( var i = 0; i<images.length; i++){
+	console.log("image in iteration is " +images[i]);
+  url = "https://s3.us-east-2.amazonaws.com/phase5draft1/"+images[i];
+  urlofDetailPage= "detailPageA.html?" + "img=" +url;
+
+	var box= document.createElement("div");
+	box.setAttribute("class","card text-white text-center bg-secondary mb-3");
+
+	var pctImg = document.createElement("img");
+	pctImg.setAttribute("class", "card-img-top");
+	pctImg.setAttribute("src", url);
+  var link = document.createElement("a");
+  link.setAttribute("href", urlofDetailPage);
+  link.appendChild(pctImg);
+	box.appendChild(link);
+
+	var picCap = document.createElement("h3");
+	picCap.setAttribute("class", "card-title");
+	picCap.innerHTML = captions[i];
+	box.appendChild(picCap);
+
+	var picDesc = document.createElement("p");
+	picDesc.setAttribute("class", "card-text");
+	picDesc.innerHTML = descriptions[i];
+	box.appendChild(picDesc);
+
+  var Fbuttonid = "a"+ i;
+  var UFbuttonid = "b"+i;
+  var FavStarid = "c" +i;
+
+	var favbutton = document.createElement("button");
+	favbutton.setAttribute("class","btn-primary");
+	favbutton.setAttribute("id",Fbuttonid);
+	favbutton.innerHTML = "Favorite";
+
+	var unfav = document.createElement("button");
+	unfav.setAttribute("class","btn-secondary");
+	unfav.setAttribute("id",UFbuttonid);
+	unfav.innerHTML = "Unfavorite";
+
+  var starred = document.createElement("img");
+  starred.setAttribute("class","favStar");
+  starred.setAttribute("id",FavStarid);
+  starred.setAttribute("src","star.png");
+
+
+	box.appendChild(favbutton);
+	box.appendChild(unfav);
+  box.appendChild(starred);
+	containMe.appendChild(box);
+  }
+
+
+  var teamMember = document.createElement("button");
+  teamMember.setAttribute("id","teamMember");
+  teamMember.setAttribute("class","btn btn-outline-dark");
+  teamMember.innerHTML = "Go to Other Team Member's Page";
+  containMe.appendChild(teamMember);
+
+  var clearcookies = document.createElement("button");
+  clearcookies.setAttribute("id","CCookie");
+  clearcookies.setAttribute("class","btn btn-outline-dark");
+  clearcookies.innerHTML = "Clear Cookies";
+  containMe.appendChild(clearcookies);
+
+  var checkCookies = document.createElement("button");
+  checkCookies.setAttribute("id","checkCookie");
+  checkCookies.setAttribute("class","btn btn-outline-dark");
+  checkCookies.setAttribute("data-toggle","modal");
+  checkCookies.setAttribute("data-target","#CheckCookieModal")
+  checkCookies.innerHTML = "Check Cookies";
+  containMe.appendChild(checkCookies);
+
+function clearCookie(){
+  document.cookie = "";
+}
+
+function checkCookie(){
+  console.log("Current Cookie: "+ document.cookie);
+  var CookieString = document.cookie;
+  var CookieStringArray = CookieString.split("/");
+  console.log(CookieStringArray);
+  CookieStart(CookieStringArray);
+}
+
+function CookieStart(CookieStringArray){
+for(i=0; i<CookieStringArray.length;i++){
+  if(CookieStringArray[i] != ""){
+    switch(CookieStringArray[i]){
+      case "1.jpg": $("#a0").text("Favorited");$("#c0").show(500);break;
+      case "2.jpg": $("#a1").text("Favorited");$("#c1").show(500);break;
+      case "3.jpg": $("#a2").text("Favorited");$("#c2").show(500);break;
+      case "4.jpg": $("#a3").text("Favorited");$("#c3").show(500);break;
+      case "5.jpg": $("#a4").text("Favorited");$("#c4").show(500);break;
+      case "6.jpg": $("#a5").text("Favorited");$("#c5").show(500);break;
+      case "a.jpg": $("#a6").text("Favorited");$("#c6").show(500);break;
+      case "b.jpg": $("#a7").text("Favorited");$("#c7").show(500);break;
+      case "c.jpg": $("#a8").text("Favorited");$("#c8").show(500);break;
+      case "d.jpg": $("#a9").text("Favorited");$("#c9").show(500);break;
+      case "e.jpg": $("#a10").text("Favorited");$("#c10").show(500);break;
+      case "f.jpg": $("#a11").text("Favorited");$("#c11").show(500);break;
+    }
+  }
+}
+}
+
+function checkCookieButton(){
+  console.log("Current Cookie: "+ document.cookie);
+}
+
+$(document).ready(function(){
+  $("#CCookie").click(function(){
+    clearCookie();
+    console.log("Cookie Cleared");
+    console.log("Current Cookie:");
+  });
+  $("#checkCookie").click(function(){
+    checkCookieButton();
+    $("#CheckCookieContent").text(document.cookie);
+
+  });
+})
+function setCookie(){
+  var d = new Date();
+  d.setTime(d.getTime() + 30*24*60*60*1000);
+  var expires = "expires="+d.toGMTString();
+  document.cookie =""+"; "+expires;
+}
+
+window.onload= function(){
+  console.log("Cookie: "+(document.cookie));
+  checkCookie();
+
+};
+$(document).ready(function(){
+  $('.favStar').hide();
+
+  $("#teamMember").click(function(){
+    window.location.href = "https://s3-us-west-1.amazonaws.com/cis3110/Phase3/phase2-start-v4.html";
+  })
+
+  $("#a0").click(function(){
+    if(document.cookie.includes("1.jpg/")){
+      alert("Already Favorited");
+    }else{
+    document.cookie += "1.jpg/";
+    alert("favorited");
+    console.log("image 1 favorited");
+    $("#a0").hide(500).show(500);
+  }
+});
+  $("#a1").click(function(){
+    if(document.cookie.includes("2.jpg/")){
+      alert("Already Favorited");
+    }else{
+        document.cookie += "2.jpg/";
+    alert("favorited");
+    console.log("image 2 favorited");
+    $("#a1").hide(500).show(500);}});
+  $("#a2").click(function(){
+    if(document.cookie.includes("3.jpg/")){
+      alert("Already Favorited");
+    }else{
+        document.cookie += "3.jpg/";
+    alert("favorited");
+    console.log("image 3 favorited");
+    $("#a2").hide(500).show(500);}});
+  $("#a3").click(function(){
+    if(document.cookie.includes("4.jpg/")){
+      alert("Already Favorited");
+    }else{
+        document.cookie += "4.jpg/";
+    alert("favorited");
+    console.log("image 4 favorited");
+    $("#a3").hide(500).show(500);}});
+  $("#a4").click(function(){
+    if(document.cookie.includes("5.jpg/")){
+      alert("Already Favorited");
+    }else{
+        document.cookie += "5.jpg/";
+    alert("favorited");
+    console.log("image 5 favorited");
+    $("#a4").hide(500).show(500);}});
+  $("#a5").click(function(){
+    if(document.cookie.includes("6.jpg/")){
+      alert("Already Favorited");
+    }else{
+        document.cookie += "6.jpg/";
+    alert("favorited");
+    console.log("image 6 favorited");
+    $("#a5").hide(500).show(500);}});
+
+    $("#a6").click(function(){
+      if(document.cookie.includes("a.jpg/")){
+        alert("Already Favorited");
+      }else{
+      document.cookie += "a.jpg/";
+      alert("favorited");
+      console.log("image 7 favorited");
+      $("#a6").hide(500).show(500);
+    }
+  });
+  $("#a7").click(function(){
+    if(document.cookie.includes("b.jpg/")){
+      alert("Already Favorited");
+    }else{
+    document.cookie += "b.jpg/";
+    alert("favorited");
+    console.log("image 8 favorited");
+    $("#a7").hide(500).show(500);
+  }
+});
+$("#a8").click(function(){
+  if(document.cookie.includes("c.jpg/")){
+    alert("Already Favorited");
+  }else{
+  document.cookie += "c.jpg/";
+  alert("favorited");
+  console.log("image 9 favorited");
+  $("#a8").hide(500).show(500);
+}
+});
+$("#a9").click(function(){
+  if(document.cookie.includes("d.jpg/")){
+    alert("Already Favorited");
+  }else{
+  document.cookie += "d.jpg/";
+  alert("favorited");
+  console.log("image 10 favorited");
+  $("#a9").hide(500).show(500);
+}
+});
+$("#a10").click(function(){
+  if(document.cookie.includes("e.jpg/")){
+    alert("Already Favorited");
+  }else{
+  document.cookie += "e.jpg/";
+  alert("favorited");
+  console.log("image 11 favorited");
+  $("#a10").hide(500).show(500);
+}
+});
+$("#a11").click(function(){
+  if(document.cookie.includes("f.jpg/")){
+    alert("Already Favorited");
+  }else{
+  document.cookie += "f.jpg/";
+  alert("favorited");
+  console.log("image 12 favorited");
+  $("#a11").hide(500).show(500);
+}
+});
+    $("#b0").click(function(){
+
+          if(document.cookie.includes("1.jpg/")){
+            document.cookie =document.cookie.replace('1.jpg/','');
+            console.log(document.cookie);
+            console.log("image 1 unfavorited");
+          }else{
+            alert("picture was not favorited");
+          }
+      $("#b0").hide(500).show(500);});
+    $("#b1").click(function(){
+
+          if(document.cookie.includes("2.jpg/")){
+            document.cookie =document.cookie.replace('2.jpg/','');
+            console.log(document.cookie);
+            console.log("image 2 unfavorited");
+          }else{
+            alert("picture was not favorited");
+          }
+      $("#b1").hide(500).show(500);});
+    $("#b2").click(function(){
+          if(document.cookie.includes("3.jpg/")){
+            document.cookie =document.cookie.replace('3.jpg/','');
+            console.log(document.cookie);
+            console.log("image 3 unfavorited");
+          }else{
+            alert("picture was not favorited");
+          }
+      $("#b2").hide(500).show(500);});
+    $("#b3").click(function(){
+          if(document.cookie.includes("4.jpg/")){
+            document.cookie =document.cookie.replace('4.jpg/','');
+            console.log(document.cookie);
+            console.log("image 4 unfavorited");
+          }else{
+            alert("picture was not favorited");
+          }
+      $("#b3").hide(500).show(500);});
+    $("#b4").click(function(){
+          if(document.cookie.includes("5.jpg/")){
+            document.cookie =document.cookie.replace('5.jpg/','');
+            console.log(document.cookie);
+            console.log("image 5 unfavorited");
+          }else{
+            alert("picture was not favorited");
+          }
+      $("#b4").hide(500).show(500);});
+    $("#b5").click(function(){
+          if(document.cookie.includes("6.jpg/")){
+            document.cookie =document.cookie.replace('6.jpg/','');
+            console.log(document.cookie);
+            console.log("image 6 unfavorited");
+          }else{
+            alert("picture was not favorited");
+          }
+      $("#b5").hide(500).show(500);});
+      $("#b6").click(function(){
+
+            if(document.cookie.includes("a.jpg/")){
+              document.cookie =document.cookie.replace('a.jpg/','');
+              console.log(document.cookie);
+              console.log("image 7 unfavorited");
+            }else{
+              alert("picture was not favorited");
+            }
+        $("#b6").hide(500).show(500);});
+        $("#b7").click(function(){
+
+              if(document.cookie.includes("b.jpg/")){
+                document.cookie =document.cookie.replace('b.jpg/','');
+                console.log(document.cookie);
+                console.log("image 8 unfavorited");
+              }else{
+                alert("picture was not favorited");
+              }
+          $("#b7").hide(500).show(500);});
+          $("#b8").click(function(){
+
+                if(document.cookie.includes("c.jpg/")){
+                  document.cookie =document.cookie.replace('c.jpg/','');
+                  console.log(document.cookie);
+                  console.log("image 9 unfavorited");
+                }else{
+                  alert("picture was not favorited");
+                }
+            $("#b8").hide(500).show(500);});
+            $("#b9").click(function(){
+
+                  if(document.cookie.includes("d.jpg/")){
+                    document.cookie =document.cookie.replace('d.jpg/','');
+                    console.log(document.cookie);
+                    console.log("image 10 unfavorited");
+                  }else{
+                    alert("picture was not favorited");
+                  }
+              $("#b9").hide(500).show(500);});
+              $("#b10").click(function(){
+
+                    if(document.cookie.includes("e.jpg/")){
+                      document.cookie =document.cookie.replace('e.jpg/','');
+                      console.log(document.cookie);
+                      console.log("image 11 unfavorited");
+                    }else{
+                      alert("picture was not favorited");
+                    }
+                $("#b10").hide(500).show(500);});
+                $("#b11").click(function(){
+
+                      if(document.cookie.includes("f.jpg/")){
+                        document.cookie =document.cookie.replace('f.jpg/','');
+                        console.log(document.cookie);
+                        console.log("image 12 unfavorited");
+                      }else{
+                        alert("picture was not favorited");
+                      }
+                  $("#b11").hide(500).show(500);});
+  });
+
+</script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+</body>
+</html>

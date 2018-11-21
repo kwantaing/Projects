@@ -1,0 +1,70 @@
+.pctImg{
+width: 100%;
+height: auto;
+}
+.imgDiv{
+  width:30%
+  height:300px;
+<<<<<<< HEAD
+  padding:5px;
+=======
+  padding:5px;
+}
+body {
+  margin: 10px;
+}
+.containMe {
+  position: relative;
+  display: grid;
+  grid-gap: 3px;
+  grid-template-columns: 33% 33% 33%; //for responsitivity
+}
+
+.box {
+  position: relative;
+  background-color: lightblue;
+  color: darkblue;
+  border-radius: 3px;
+  padding: 20px;
+  font-size: 40%;
+  margin: 3px;
+  border: 3px;
+  border-radius: 8px;
+}
+
+.favorite{
+  position: absolute;
+  width: 75px;
+  height: 30px;
+  background-color: yellow;
+  top:0;
+  left:0;
+  margin: 2px;
+  border-radius: 10px;
+}
+.unfavorite{
+  position: absolute;
+  width: 75px;
+  height: 30px;
+  background-color: lightgreen;
+  top:0;
+  right:0;
+  margin: 2px;
+  border-radius: 10px;
+}
+
+.picCap{
+	font-size: 20px;
+}
+.picDesc{
+	font-size: 12px;
+	color: red;
+}
+.favStar{
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  top: 0;
+  left: 0;
+  margin: 2px;
+}
